@@ -1,0 +1,23 @@
+NAME
+    Devel::CheckCompiler - Check the compiler's availability
+
+SYNOPSIS
+        use Devel::CheckCompiler;
+
+        check_c99_or_exit();
+
+DESCRIPTION
+    Devel::CheckCompiler is checker for compiler's availability.
+
+AUTHOR
+    Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>
+
+SEE ALSO
+    ExtUtils::CBuilder
+
+LICENSE
+    Copyright (C) Tokuhiro Matsuno
+
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
