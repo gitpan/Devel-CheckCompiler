@@ -2,7 +2,7 @@ package Devel::CheckCompiler;
 use strict;
 use warnings;
 use 5.008001;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 use parent qw/Exporter/;
 
 our @EXPORT = qw/check_c99 check_c99_or_exit/;
@@ -72,6 +72,20 @@ Devel::CheckCompiler - Check the compiler's availability
 =head1 DESCRIPTION
 
 Devel::CheckCompiler is checker for compiler's availability.
+
+=head1 FUNCTIONS
+
+=over 4
+
+=item check_c99()
+
+Returns true if the current system has a working C99 compiler, false otherwise.
+
+=item check_c99_or_exit()
+
+Check the current system has a working C99 compiler, if it's not available, exit by 0.
+
+=back
 
 =head1 AUTHOR
 
