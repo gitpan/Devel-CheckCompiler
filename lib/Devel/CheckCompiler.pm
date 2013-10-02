@@ -2,10 +2,10 @@ package Devel::CheckCompiler;
 use strict;
 use warnings;
 use 5.008001;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 use parent qw/Exporter/;
 
-our @EXPORT = qw/check_c99 check_c99_or_exit/;
+our @EXPORT = qw/check_c99 check_c99_or_exit check_compile/;
 use ExtUtils::CBuilder;
 
 my $C99_SOURCE = <<'C99';
@@ -77,13 +77,17 @@ Devel::CheckCompiler is checker for compiler's availability.
 
 =over 4
 
-=item check_c99()
+=item C<check_c99()>
 
 Returns true if the current system has a working C99 compiler, false otherwise.
 
-=item check_c99_or_exit()
+=item C<check_c99_or_exit()>
 
 Check the current system has a working C99 compiler, if it's not available, exit by 0.
+
+=item C<check_compile($src: Str)>
+
+Compile C<$src> as C code. Return 1 if it's available, 0 otherwise.
 
 =back
 
