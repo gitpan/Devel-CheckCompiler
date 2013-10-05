@@ -10,6 +10,7 @@ t/00_compile.t
 t/assert-c99.t
 t/check_c99.t
 t/check_c99_or_exit.t
+t/executable.t
 xt/02_perlcritic.t
 META.yml
 MANIFEST
