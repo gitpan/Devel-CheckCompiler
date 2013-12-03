@@ -2,7 +2,7 @@ package Devel::CheckCompiler;
 use strict;
 use warnings;
 use 5.008001;
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 use parent qw/Exporter/;
 
 our @EXPORT = qw/check_c99 check_c99_or_exit check_compile/;
@@ -50,7 +50,8 @@ sub check_compile {
         my $ret = 1;
         if ($opt{executable}) {
             my $execfile = eval {
-                $cbuilder->link_executable(objects => $objname);
+                $cbuilder->link_executable(objects => $objname,
+                                           extra_linker_flags => $opt{extra_linker_flags});
             };
 
             if ($execfile) {
@@ -108,6 +109,11 @@ Possible options are:
 =item executable :Bool = false
 
 Check to see if generating executable is possible if this parameter is true.
+
+=item extra_linker_flags : Str | ArrayRef[Str]
+
+Any additional flags you wish to pass to the linker. This option is used
+only when C<executable> option specified.
 
 =back
 
